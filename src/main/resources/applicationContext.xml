@@ -8,16 +8,16 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="musicBean"
-          class="org.kogutenko.crud_rest.models.ClassicalMusic">
+          class="org.kogutenko.crud_rest.model.ClassicalMusic">
     </bean>
 
     <bean id="musicPlayerWithConstructor"
-          class="org.kogutenko.crud_rest.models.MusicPlayer">
+          class="org.kogutenko.crud_rest.model.MusicPlayer">
         <constructor-arg ref="musicBean"/>
     </bean>
 
     <bean id="musicPlayerWithSetter"
-          class="org.kogutenko.crud_rest.models.MusicPlayer">
+          class="org.kogutenko.crud_rest.model.MusicPlayer">
         <property name="music" ref="musicBean"/>
     </bean>
 

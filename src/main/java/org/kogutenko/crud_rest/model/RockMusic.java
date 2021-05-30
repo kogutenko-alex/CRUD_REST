@@ -1,4 +1,4 @@
-package org.kogutenko.crud_rest.models;
+package org.kogutenko.crud_rest.model;
 
 public class RockMusic implements Music {
     @Override

@@ -1,6 +1,6 @@
 package org.kogutenko.crud_rest;
 
-import org.kogutenko.crud_rest.models.MusicPlayer;
+import org.kogutenko.crud_rest.model.MusicPlayer;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class StartApp {
