@@ -11,13 +11,20 @@ public class StartApp {
 
         //MusicPlayer musicPlayer = new MusicPlayer(musicBean);
 
-        MusicPlayer musicPlayer = context.getBean("musicPlayerWithSetterProperties", MusicPlayer.class);
-        musicPlayer.playMusic();
-        System.out.println(
-                "name of player is " + musicPlayer.getNamePlayer() + "\n" +
-                "max volume is " + musicPlayer.getMaxVolume()
-        );
+        MusicPlayer firstMusicPlayer = context.getBean("musicPlayerWithSetterScope", MusicPlayer.class);
+        MusicPlayer secondMusicPlayer = context.getBean("musicPlayerWithSetterScope", MusicPlayer.class);
 
+        boolean comporison = firstMusicPlayer == secondMusicPlayer;
+
+        System.out.println(comporison);
+        System.out.println(firstMusicPlayer);
+        firstMusicPlayer.playMusic();
+        System.out.println(secondMusicPlayer);
+        secondMusicPlayer.playMusic();
+
+        firstMusicPlayer.setMaxVolume(10);
+        System.out.println(firstMusicPlayer.getMaxVolume());
+        System.out.println(secondMusicPlayer.getMaxVolume());
 
         context.close();
     }

@@ -38,4 +38,12 @@
         <property name="namePlayer" value="${musicPlayer.namePlayer}"/>
         <property name="maxVolume" value="${musicPlayer.maxVolume}"/>
     </bean>
+
+    <bean id="musicPlayerWithSetterScope"
+          class="org.kogutenko.crud_rest.model.MusicPlayer"
+          scope="prototype">
+        <property name="music" ref="musicBean"/>
+        <property name="namePlayer" value="spotify"/>
+        <property name="maxVolume" value="30"/>
+    </bean>
 </beans>
