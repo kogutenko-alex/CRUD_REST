@@ -1,7 +1,6 @@
 package org.kogutenko.crud_rest;
 
-import org.kogutenko.crud_rest.model.Music;
-import org.kogutenko.crud_rest.model.MusicPlayer;
+import org.kogutenko.crud_rest.models.MusicPlayer;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class StartApp {
@@ -12,7 +11,7 @@ public class StartApp {
 
         //MusicPlayer musicPlayer = new MusicPlayer(musicBean);
 
-        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        MusicPlayer musicPlayer = context.getBean("musicPlayerWithSetter", MusicPlayer.class);
         musicPlayer.playMusic();
 
         context.close();
