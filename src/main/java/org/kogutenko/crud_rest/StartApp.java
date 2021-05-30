@@ -11,7 +11,7 @@ public class StartApp {
 
         //MusicPlayer musicPlayer = new MusicPlayer(musicBean);
 
-        MusicPlayer musicPlayer = context.getBean("musicPlayerWithSetter2", MusicPlayer.class);
+        MusicPlayer musicPlayer = context.getBean("musicPlayerWithSetterProperties", MusicPlayer.class);
         musicPlayer.playMusic();
         System.out.println(
                 "name of player is " + musicPlayer.getNamePlayer() + "\n" +
