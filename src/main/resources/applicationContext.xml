@@ -21,4 +21,11 @@
         <property name="music" ref="musicBean"/>
     </bean>
 
+    <bean id="musicPlayerWithSetter2"
+          class="org.kogutenko.crud_rest.model.MusicPlayer">
+        <property name="music" ref="musicBean"/>
+        
+        <property name="namePlayer" value="spotify"/>
+        <property name="maxVolume" value="30"/>
+    </bean>
 </beans>

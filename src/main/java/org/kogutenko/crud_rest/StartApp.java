@@ -11,8 +11,13 @@ public class StartApp {
 
         //MusicPlayer musicPlayer = new MusicPlayer(musicBean);
 
-        MusicPlayer musicPlayer = context.getBean("musicPlayerWithSetter", MusicPlayer.class);
+        MusicPlayer musicPlayer = context.getBean("musicPlayerWithSetter2", MusicPlayer.class);
         musicPlayer.playMusic();
+        System.out.println(
+                "name of player is " + musicPlayer.getNamePlayer() + "\n" +
+                "max volume is " + musicPlayer.getMaxVolume()
+        );
+
 
         context.close();
     }
