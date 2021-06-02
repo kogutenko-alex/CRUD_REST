@@ -1,5 +1,6 @@
 package org.kogutenko.crud_rest;
 
+import org.kogutenko.crud_rest.model.ClassicalMusic;
 import org.kogutenko.crud_rest.model.MusicPlayer;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -7,24 +8,27 @@ public class StartApp {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
+        ClassicalMusic cl = context.getBean("musicBeanFM", ClassicalMusic.class);
+        System.out.println(cl.getSong());
+
         //Music musicBean = context.getBean("musicBean", Music.class);
 
         //MusicPlayer musicPlayer = new MusicPlayer(musicBean);
 
-        MusicPlayer firstMusicPlayer = context.getBean("musicPlayerWithSetterScope", MusicPlayer.class);
-        MusicPlayer secondMusicPlayer = context.getBean("musicPlayerWithSetterScope", MusicPlayer.class);
-
-        boolean comporison = firstMusicPlayer == secondMusicPlayer;
-
-        System.out.println(comporison);
-        System.out.println(firstMusicPlayer);
-        firstMusicPlayer.playMusic();
-        System.out.println(secondMusicPlayer);
-        secondMusicPlayer.playMusic();
-
-        firstMusicPlayer.setMaxVolume(10);
-        System.out.println(firstMusicPlayer.getMaxVolume());
-        System.out.println(secondMusicPlayer.getMaxVolume());
+//        MusicPlayer firstMusicPlayer  = context.getBean("musicPlayerWithSetterScope", MusicPlayer.class);
+//        MusicPlayer secondMusicPlayer = context.getBean("musicPlayerWithSetterScope", MusicPlayer.class);
+//
+//        boolean comparison = firstMusicPlayer == secondMusicPlayer;
+//
+//        System.out.println(comparison);
+//        System.out.println(firstMusicPlayer);
+//        firstMusicPlayer.playMusic();
+//        System.out.println(secondMusicPlayer);
+//        secondMusicPlayer.playMusic();
+//
+//        firstMusicPlayer.setMaxVolume(10);
+//        System.out.println(firstMusicPlayer.getMaxVolume());
+//        System.out.println(secondMusicPlayer.getMaxVolume());
 
         context.close();
     }

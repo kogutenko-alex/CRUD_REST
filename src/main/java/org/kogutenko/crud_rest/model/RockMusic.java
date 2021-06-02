@@ -5,4 +5,12 @@ public class RockMusic implements Music {
     public String getSong() {
         return "Wind cries Marry";
     }
+
+    public void initialization() {
+
+    }
+
+    public void destroy() {
+
+    }
 }

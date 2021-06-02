@@ -10,7 +10,16 @@
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
     <bean id="musicBean"
-          class="org.kogutenko.crud_rest.model.ClassicalMusic">
+          class="org.kogutenko.crud_rest.model.ClassicalMusic"
+          init-method="initialization"
+          destroy-method="destroy">
+    </bean>
+
+    <bean id="musicBeanFM"
+          class="org.kogutenko.crud_rest.model.ClassicalMusic"
+          init-method="initialization"
+          destroy-method="destroy"
+          factory-method="createClassicalMusic">
     </bean>
 
     <bean id="musicPlayerWithConstructor"
