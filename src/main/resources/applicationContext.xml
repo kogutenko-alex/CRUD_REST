@@ -9,50 +9,6 @@
 
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
-    <bean id="musicBean"
-          class="org.kogutenko.crud_rest.model.ClassicalMusic"
-          init-method="initialization"
-          destroy-method="destroy">
-    </bean>
+    <context:component-scan base-package="org.kogutenko.crud_rest"/>
 
-    <bean id="musicBeanFM"
-          class="org.kogutenko.crud_rest.model.ClassicalMusic"
-          init-method="initialization"
-          destroy-method="destroy"
-          factory-method="createClassicalMusic">
-    </bean>
-
-    <bean id="musicPlayerWithConstructor"
-          class="org.kogutenko.crud_rest.model.MusicPlayer">
-        <constructor-arg ref="musicBean"/>
-    </bean>
-
-    <bean id="musicPlayerWithSetter"
-          class="org.kogutenko.crud_rest.model.MusicPlayer">
-        <property name="music" ref="musicBean"/>
-    </bean>
-
-    <bean id="musicPlayerWithSetter2"
-          class="org.kogutenko.crud_rest.model.MusicPlayer">
-        <property name="music" ref="musicBean"/>
-        
-        <property name="namePlayer" value="spotify"/>
-        <property name="maxVolume" value="30"/>
-    </bean>
-
-    <bean id="musicPlayerWithSetterProperties"
-          class="org.kogutenko.crud_rest.model.MusicPlayer">
-        <property name="music" ref="musicBean"/>
-
-        <property name="namePlayer" value="${musicPlayer.namePlayer}"/>
-        <property name="maxVolume" value="${musicPlayer.maxVolume}"/>
-    </bean>
-
-    <bean id="musicPlayerWithSetterScope"
-          class="org.kogutenko.crud_rest.model.MusicPlayer"
-          scope="prototype">
-        <property name="music" ref="musicBean"/>
-        <property name="namePlayer" value="spotify"/>
-        <property name="maxVolume" value="30"/>
-    </bean>
 </beans>

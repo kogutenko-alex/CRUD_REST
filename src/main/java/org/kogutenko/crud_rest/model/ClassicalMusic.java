@@ -1,5 +1,9 @@
 package org.kogutenko.crud_rest.model;
 
+
+import org.springframework.stereotype.Component;
+
+@Component("classicalSongs")
 public class ClassicalMusic implements Music {
     private ClassicalMusic() {}
 
